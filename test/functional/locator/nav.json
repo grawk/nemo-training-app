@@ -1,0 +1,25 @@
+{
+  "navBox": {
+    "US": {
+        "locator": "#nav.visible",
+        "type": "css"
+    },
+    "MX": {
+        "locator": "#nav.visible",
+        "type": "css"
+    }
+
+  },
+  "addCardLink": {
+    "locator": "addcclink",
+    "type": "id"
+  },
+  "addBankLink": {
+    "locator": "addbalink",
+    "type": "id"
+  },
+  "logoutLink": {
+    "locator": "logoutlink",
+    "type": "id"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "loginForm": {
+    "locator": "#loginform.visible",
+    "type": "css"
+  },
+  "email": {
+    "locator": "email",
+    "type": "id"
+  },
+  "password": {
+    "locator": "password",
+    "type": "id"
+  },
+  "loginButton": {
+    "locator": "loginbutton",
+    "type": "id"
+  }
+}
