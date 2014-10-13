@@ -22,26 +22,37 @@ require([/* Dependencies */], function () {
             var navi = document.querySelectorAll('#nav')[0];
             var ccn;
             var em;
+            var bn;
             var result = document.querySelectorAll('#result');
-            bt[0].addEventListener('click', function() {
+            bt[0].addEventListener('click', function () {
                 ccn = document.querySelectorAll('#cc')[0].value;
                 console.log("ccn is", ccn);
                 result[0].innerHTML = "Please wait";
-                setTimeout(function() {
+                setTimeout(function () {
                     result[0].innerHTML = (ccn === "1001001") ? "<p class='result bad'>Unable to add your card</p>" : "<p class='result good'>Successfully added your card</p>";
                 }, appTimeout);
             });
-            bbt[0].addEventListener('click', function() {
+            bbt[0].addEventListener('click', function () {
                 result[0].innerHTML = "Please wait";
-                setTimeout(function() {
+                setTimeout(function () {
+                    bn = document.querySelectorAll('#ban')[0].value;
+                    result[0].innerHTML = "Please wait";
+                    setTimeout(function() {
+                        if (bn === "1001001") {
+                            result[0].innerHTML = "<p class='result bad'>Unable to add your bank account</p>";
+                        } else {
+                            result[0].innerHTML = "";
+                            ccform.setAttribute('class', 'hidden');
+                            baform.setAttribute('class', 'visible');
+                        }
                     result[0].innerHTML = "<p class='result good'>Successfully added your bank account</p>";
                 }, appTimeout);
             });
-            lbt[0].addEventListener('click', function() {
+            lbt[0].addEventListener('click', function () {
                 em = document.querySelectorAll('#email')[0].value;
                 console.log("email is", em);
                 result[0].innerHTML = "Please wait";
-                setTimeout(function() {
+                setTimeout(function () {
                     if (em === "fail@fail.com") {
                         result[0].innerHTML = "<p class='result bad'>Unable to login</p>";
                     } else {
@@ -52,20 +63,22 @@ require([/* Dependencies */], function () {
                     }
                 }, appTimeout);
             });
-            linkaddcc.addEventListener('click', function() {
+            linkaddcc.addEventListener('click', function () {
                 result[0].innerHTML = "Please wait";
-                setTimeout(function() {
+                setTimeout(function () {
                     result[0].innerHTML = "";
                     ccform.setAttribute('class', 'visible');
                     baform.setAttribute('class', 'hidden');
                 }, appTimeout);
             });
-            linkaddba.addEventListener('click', function() {
+            linkaddba.addEventListener('click', function () {
                 result[0].innerHTML = "Please wait";
-                setTimeout(function() {
+                setTimeout(function () {
+
                     result[0].innerHTML = "";
                     ccform.setAttribute('class', 'hidden');
                     baform.setAttribute('class', 'visible');
+
                 }, appTimeout);
             });
         }

@@ -19,3 +19,10 @@ Now you should have the app installed and running. Test it to make sure. Visit h
 ## Training
 
 Follow the steps in the training doc to work towards the `after` branch. Of course, if you're pressed for time, you can just start with the `after` branch...
+
+## Application functionality
+
+This app simulates a few typical PayPal use cases:
+* Login
+* Add card
+* Add bank
