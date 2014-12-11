@@ -1,6 +1,0 @@
-{
-  "page": {
-    "locator": "#wrapper h1",
-    "type": "css"
-  }
-}

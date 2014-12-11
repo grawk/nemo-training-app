@@ -37,52 +37,47 @@ require([/* Dependencies */], function () {
                 setTimeout(function () {
                     bn = document.querySelectorAll('#ban')[0].value;
                     result[0].innerHTML = "Please wait";
-                    setTimeout(function() {
-                        if (bn === "1001001") {
-                            result[0].innerHTML = "<p class='result bad'>Unable to add your bank account</p>";
+                    setTimeout(function () {
+                      result[0].innerHTML = (bn === "1001001") ? "<p class='result bad'>Unable to add your bank account</p>" : "<p class='result good'>Successfully added your bank account</p>";
+                        //result[0].innerHTML = "<p class='result good'>Successfully added your bank account</p>";
+                    }, appTimeout);
+                });
+            });
+                lbt[0].addEventListener('click', function () {
+                    em = document.querySelectorAll('#email')[0].value;
+                    console.log("email is", em);
+                    result[0].innerHTML = "Please wait";
+                    setTimeout(function () {
+                        if (em === "fail@fail.com") {
+                            result[0].innerHTML = "<p class='result bad'>Unable to login</p>";
                         } else {
-                            result[0].innerHTML = "";
-                            ccform.setAttribute('class', 'hidden');
-                            baform.setAttribute('class', 'visible');
+                            result[0].innerHTML = "<p class='result good'>Logged in as " + em + "</p>";
+                            loginform.setAttribute('class', 'hidden');
+                            ccform.setAttribute('class', 'visible');
+                            navi.setAttribute('class', 'visible');
                         }
-                    result[0].innerHTML = "<p class='result good'>Successfully added your bank account</p>";
-                }, appTimeout);
-            });
-            lbt[0].addEventListener('click', function () {
-                em = document.querySelectorAll('#email')[0].value;
-                console.log("email is", em);
-                result[0].innerHTML = "Please wait";
-                setTimeout(function () {
-                    if (em === "fail@fail.com") {
-                        result[0].innerHTML = "<p class='result bad'>Unable to login</p>";
-                    } else {
-                        result[0].innerHTML = "<p class='result good'>Logged in as " + em + "</p>";
-                        loginform.setAttribute('class', 'hidden');
+                    }, appTimeout);
+                });
+                linkaddcc.addEventListener('click', function () {
+                    result[0].innerHTML = "Please wait";
+                    setTimeout(function () {
+                        result[0].innerHTML = "";
                         ccform.setAttribute('class', 'visible');
-                        navi.setAttribute('class', 'visible');
-                    }
-                }, appTimeout);
-            });
-            linkaddcc.addEventListener('click', function () {
-                result[0].innerHTML = "Please wait";
-                setTimeout(function () {
-                    result[0].innerHTML = "";
-                    ccform.setAttribute('class', 'visible');
-                    baform.setAttribute('class', 'hidden');
-                }, appTimeout);
-            });
-            linkaddba.addEventListener('click', function () {
-                result[0].innerHTML = "Please wait";
-                setTimeout(function () {
+                        baform.setAttribute('class', 'hidden');
+                    }, appTimeout);
+                });
+                linkaddba.addEventListener('click', function () {
+                    result[0].innerHTML = "Please wait";
+                    setTimeout(function () {
 
-                    result[0].innerHTML = "";
-                    ccform.setAttribute('class', 'hidden');
-                    baform.setAttribute('class', 'visible');
+                        result[0].innerHTML = "";
+                        ccform.setAttribute('class', 'hidden');
+                        baform.setAttribute('class', 'visible');
 
-                }, appTimeout);
-            });
-        }
-    };
+                    }, appTimeout);
+                });
+            }
+        };
 
     app.initialize();
 
